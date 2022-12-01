@@ -36,10 +36,10 @@ EOF
 echo "Fetching the main input"
 python - << EOF
 import requests
-cookies_dict={"session": "53616c7465645f5f5b0c15fcbd65a268049a89bae5305465a4b3e35851d5fe5582f283134db93c8b5e12ad9e0db56fd1"}
-url='https://adventofcode.com/2021/day/$day/input'
+cookies_dict={"session": "53616c7465645f5fb1e2eb53a89c141b788f89cb3d912724dab04961dbdbb6f3305090e282168bb7f414b209bfdc5f37d7f694c39b3525e0873feb3c2258465d"}
+url='https://adventofcode.com/2022/day/$day/input'
 req = requests.get(url, cookies=cookies_dict)
-f = open("day$day.inp","a")
+f = open("day$day/day$day.inp","a")
 f.write(req.text)
 f.close()
 EOF

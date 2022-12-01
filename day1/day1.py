@@ -1,40 +1,29 @@
-import numpy as np
+#Add import libs below
+
 def parseInput(fin):
-    depths = fin.read().rstrip().split("\n")
-    depths = [int(x) for x in depths]
-    return depths
+    return fin.read().rstrip().split("\n")
 
 
 
 
-#de = parseInput(open("test.inp"))
-de = parseInput(open("day1.inp"))
+#parsed = parseInput(open("test.inp"))
+parsed = parseInput(open("day1.inp"))
 
-depths = np.array(de)
 
 #Part 1
-print("Part 1:", np.sum(np.diff(depths) > 0))
+a1 = 0
+a2 = []
+for x in parsed:
+    if x != "":
+        a1+=int(x)
+    else:
+        a2.append(a1)
+        a1=0
+a2.append(a1)
+print("Part 1: ",max(a2))
+
+
 
 #Part 2
-n = int(depths.shape[0]/3)
-sum_depth = np.array([np.sum(depths[i:i+3]) for i in range(depths.size-2)])
-print("Part 3:", np.sum(np.diff(sum_depth) > 0))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+print("Part 2: ", sum(sorted(a2, reverse=True)[0:3]))
 
