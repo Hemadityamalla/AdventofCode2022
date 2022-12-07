@@ -1,0 +1,9 @@
+$ cd /
+$ ls
+dir a
+1000 b.txt
+699 c.dat
+$ cd a
+$ ls
+100 d
+200 e
