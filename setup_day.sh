@@ -1,10 +1,12 @@
 #!/bin/bash
+set -e
+# Any subsequent(*) commands which fail will cause the shell script to exit immediately
 
 echo "Enter day:"
 read day
 
 echo "Creating folder day$day"
-mkdir -p day$day
+mkdir day$day
 echo "Creating test input file"
 touch day$day/test.inp
 echo "Creating main input file"
