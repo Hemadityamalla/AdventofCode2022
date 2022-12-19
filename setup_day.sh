@@ -20,8 +20,10 @@ def parseInput(fin):
 
 
 
-parsed = parseInput(open("test.inp"))
-#parsed = parseInput(open("day$day.inp"))
+if input("test/real?") == "test":
+    parsed = parseInput(open("test.inp"))
+else:
+    parsed = parseInput(open("day$day.inp"))
 
 
 #Part 1
